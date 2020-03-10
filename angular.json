@@ -119,6 +119,46 @@
           }
         }
       }
+    },
+    "@pazznetwork/ngx-chat": {
+      "projectType": "library",
+      "root": "projects/pazznetwork/ngx-chat",
+      "sourceRoot": "projects/pazznetwork/ngx-chat/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/pazznetwork/ngx-chat/tsconfig.lib.json",
+            "project": "projects/pazznetwork/ngx-chat/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/pazznetwork/ngx-chat/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pazznetwork/ngx-chat/src/test.ts",
+            "tsConfig": "projects/pazznetwork/ngx-chat/tsconfig.spec.json",
+            "karmaConfig": "projects/pazznetwork/ngx-chat/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pazznetwork/ngx-chat/tsconfig.lib.json",
+              "projects/pazznetwork/ngx-chat/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ngx-chat-xmpp-shell"
 }

@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@pazznetwork/ngx-chat": [
+        "dist/pazznetwork/ngx-chat/pazznetwork-ngx-chat",
+        "dist/pazznetwork/ngx-chat"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
